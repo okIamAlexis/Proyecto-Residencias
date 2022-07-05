@@ -1,0 +1,75 @@
+<div class="jumbotron text-center">
+    <h1>Bienvenido {{ nombreUsuario }}!</h1>
+    <p class="lead text-muted">Selecciona un Cuestionario</p>
+
+    <div class="form-group" style="margin-bottom: 0; width: 400px; margin: 0 auto;">
+        <form [formGroup]="tipocuestionario">
+                
+                <div class="form-group" style="text-align: center;">
+                    <select class="form-group form-control" aria-label="Default select example" formControlName="cuestionario" style= "margin-bottom: 0;">
+                        <option  selected>Cuestionario para...</option>
+                        <option value="Alumno">Alumno</option>
+                        <option value="Maestro">Maestro</option>
+                        <option value="Egresado">Egresado</option>
+                        <option value="Empleador">Empleador</option>
+                    </select>
+
+                </div>
+        </form>
+
+    </div>
+
+    <div class="row" >
+        <div class="col-lg-6 offset-lg-3" *ngIf="tipocuestionario.value?.cuestionario == 'Egresado'">
+            <button class="btn btn-success btn-block btn-cues" 
+                    routerLink="/dashboard/nuevoCuestionario/pasoUno">NUEVO CUESTIONARIO EGRESADO</button>
+
+
+        </div>
+    </div>
+
+    <div class="row" *ngIf="tipocuestionario.value?.cuestionario == 'Empleador'">
+        <div class="col-lg-6 offset-lg-3">
+            <button class="btn btn-success btn-block btn-cues" 
+                    routerLink="/dashboard/nuevoCuestionarioEMP/pasoUnoEmp">NUEVO CUESTIONARIO EMPLEADOR</button>
+        </div>
+    </div>    
+
+</div>
+
+
+<div class="text-center" style="margin-top: -30px;">
+
+    <app-loading *ngIf="loading"></app-loading>
+  </div>
+  
+  <div class="card-columns mt-3">
+  
+    <div class="card bg-ligth" *ngFor="let cuestionario of listCuestionarios">
+      <div class="card-body text-center">
+        
+        <h4 class="card-title">{{cuestionario.nombre}}</h4>
+        <p class="card-text">{{cuestionario.descripcion}}</p>
+        <p class="card-text">{{cuestionario.atributo}}</p>
+  
+        <div style="font-size: 15px;">
+  
+          <strong>Fecha Creacion:</strong>  {{cuestionario.fechaCreacion | date: "dd/MM/yy"}}
+  
+         
+        
+        </div>
+        
+        <div class="row">
+          <button class="btn btn-success radius" routerLink="/dashboard/verCuestionarios/{{cuestionario.id}}" >VER</button>
+          <button class="btn btn-info radius" routerLink="/dashboard/estadisticas/{{cuestionario.id}}">EST</button>
+          <button class="btn btn-danger radius" (click)="eliminarCuestionario(cuestionario.id)">ELIMINAR</button>
+        </div>
+  
+       
+      </div>
+    </div>
+  </div>
+  
+  <h3 *ngIf= "listCuestionarios.length == 0 && loading == false">No hay cuestionarios para mostrar</h3>
+  

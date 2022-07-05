@@ -1,0 +1,9 @@
+.delete-icon {
+    cursor: pointer;
+    color: rgba(255, 38, 0, 0.624);
+}
+
+.search-icon{
+    cursor: pointer;
+    color: #133697;
+}

@@ -1,0 +1,23 @@
+.container{
+    min-width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    padding: 20px;
+    width: 100%;
+}
+
+.btn-sig{
+    background-color: rgb(40, 167, 69);
+    border-color: rgb(40, 167, 69);
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+.list-group-item{
+    cursor: pointer;
+}

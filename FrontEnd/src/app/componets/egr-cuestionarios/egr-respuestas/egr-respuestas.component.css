@@ -1,0 +1,19 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.Icon{
+    color: rgb(40, 167, 69);
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+}

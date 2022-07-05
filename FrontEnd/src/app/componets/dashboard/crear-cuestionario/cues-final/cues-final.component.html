@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card text-center">
+        
+        <div>   
+
+            
+            <h4 class="card-title" > xxx <strong ></strong></h4>
+            <h5 class="card-title"> Titulo <strong>{{obtenerCuestioanrioNombre()}}</strong></h5>
+            <h5 class="card-title"> Atributo <strong>{{obtenerCuestioanrioAtributo()}}</strong></h5>
+            <h6 class="card-title">Numero de Preguntas <strong> {{obtenerCuestioanrionumpreguntas()}} </strong></h6>
+            
+            <button (click)="toggleShow()" routerLink="/dashboard/cuesFinal/{{listCuestioanrios[getIndex()].id}}" class="btn btn-info btn-lg btn-block" >Seleccionar</button>
+            <br>
+            
+                <div class="toogle-panel" *ngIf="show">
+                    <div class="row">
+                        <div   class="col-lg-4 offset-lg-4">
+                            <label>Selecciona el numero de preguntas</label>
+
+                            <select name="selected" class="form-control" [(ngModel)]="selected" >
+                                <option [value]="item" *ngFor="let item of lista">{{item}}</option> 
+                             </select>
+                             {{selected}}
+
+                            <button class="btn btn-info btn-lg btn-block"  (click)="getListaCuesPorId()" (click)="siguiente()" [disabled]="rtaConfirm" >Siguiente</button>
+                            
+                            <br>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+     
+</div>
+
+        <button class="btn btn-success btn-lg btnFinalizar"   (click)="guardarCuestionarios()" [disabled]="  " >Finalizar Cuestionario</button>
+
+

@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220120014436_login.cs" />
+    <Compile Remove="Migrations\20220120014436_login.Designer.cs" />
+    <Compile Remove="Migrations\20220205224002_v3.3.cs" />
+    <Compile Remove="Migrations\20220205224002_v3.3.Designer.cs" />
+    <Compile Remove="Migrations\20220210235811_v3.4.cs" />
+    <Compile Remove="Migrations\20220210235811_v3.4.Designer.cs" />
+    <Compile Remove="Migrations\20220210235947_v3.4.cs" />
+    <Compile Remove="Migrations\20220210235947_v3.4.Designer.cs" />
+    <Compile Remove="Migrations\20220211000144_v3.4.cs" />
+    <Compile Remove="Migrations\20220211000144_v3.4.Designer.cs" />
+    <Compile Remove="Migrations\20220211000249_v3.4.cs" />
+    <Compile Remove="Migrations\20220211000249_v3.4.Designer.cs" />
+    <Compile Remove="Migrations\20220211000614_v3.4.cs" />
+    <Compile Remove="Migrations\20220211000614_v3.4.Designer.cs" />
+    <Compile Remove="Migrations\20220211000721_v3.4.cs" />
+    <Compile Remove="Migrations\20220211000721_v3.4.Designer.cs" />
+    <Compile Remove="Migrations\20220211001908_v3.4.cs" />
+    <Compile Remove="Migrations\20220211001908_v3.4.Designer.cs" />
+    <Compile Remove="Migrations\20220211002112_v3.4.cs" />
+    <Compile Remove="Migrations\20220211002112_v3.4.Designer.cs" />
+    <Compile Remove="Migrations\20220211002235_v3.3.cs" />
+    <Compile Remove="Migrations\20220211002235_v3.3.Designer.cs" />
+    <Compile Remove="Migrations\20220211002553_v3.3.cs" />
+    <Compile Remove="Migrations\20220211002553_v3.3.Designer.cs" />
+    <Compile Remove="Migrations\20220211003235_v3.4.cs" />
+    <Compile Remove="Migrations\20220211003235_v3.4.Designer.cs" />
+    <Compile Remove="Migrations\20220211003815_v3.5.cs" />
+    <Compile Remove="Migrations\20220211003815_v3.5.Designer.cs" />
+    <Compile Remove="Migrations\20220211040001_v3.3.cs" />
+    <Compile Remove="Migrations\20220211040001_v3.3.Designer.cs" />
+    <Compile Remove="Migrations\20220211044149_v3.3.cs" />
+    <Compile Remove="Migrations\20220211044149_v3.3.Designer.cs" />
+    <Compile Remove="Migrations\20220211050654_v4.3.cs" />
+    <Compile Remove="Migrations\20220211050654_v4.3.Designer.cs" />
+    <Compile Remove="Migrations\20220211050853_v5.cs" />
+    <Compile Remove="Migrations\20220211050853_v5.Designer.cs" />
+    <Compile Remove="Migrations\20220211050912_v5.cs" />
+    <Compile Remove="Migrations\20220211050912_v5.Designer.cs" />
+    <Compile Remove="Migrations\20220211051328_v5.cs" />
+    <Compile Remove="Migrations\20220211051328_v5.Designer.cs" />
+    <Compile Remove="Migrations\20220211054124_v4.3.cs" />
+    <Compile Remove="Migrations\20220211054124_v4.3.Designer.cs" />
+    <Compile Remove="Migrations\20220216020529_v4.1.cs" />
+    <Compile Remove="Migrations\20220216020529_v4.1.Designer.cs" />
+    <Compile Remove="Migrations\20220216020636_v4.1.cs" />
+    <Compile Remove="Migrations\20220216020636_v4.1.Designer.cs" />
+    <Compile Remove="Migrations\20220216020741_v3.2.cs" />
+    <Compile Remove="Migrations\20220216020741_v3.2.Designer.cs" />
+    <Compile Remove="Migrations\20220217210522_v8.cs" />
+    <Compile Remove="Migrations\20220217210522_v8.Designer.cs" />
+    <Compile Remove="Migrations\20220218223230_v5.1.cs" />
+    <Compile Remove="Migrations\20220218223230_v5.1.Designer.cs" />
+    <Compile Remove="Migrations\20220218223344_v5.1.cs" />
+    <Compile Remove="Migrations\20220218223344_v5.1.Designer.cs" />
+    <Compile Remove="Migrations\20220218223419_v5.2.cs" />
+    <Compile Remove="Migrations\20220218223419_v5.2.Designer.cs" />
+    <Compile Remove="Migrations\20220218223446_v5.1.cs" />
+    <Compile Remove="Migrations\20220218223446_v5.1.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.2" />
+  </ItemGroup>
+
+
+</Project>

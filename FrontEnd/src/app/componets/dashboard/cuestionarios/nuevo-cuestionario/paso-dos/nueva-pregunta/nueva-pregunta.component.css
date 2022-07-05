@@ -1,0 +1,13 @@
+.delete-icons{
+    
+    cursor: pointer;
+    color: #ce4b4c;
+    padding-top: 5px;
+}
+
+.add-icon{
+    
+    cursor: pointer;
+    float: right;
+    
+}

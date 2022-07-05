@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h3{
+    font-family: 'Nunito', sans-serif;
+    background-color: rgb(51, 49, 49);
+    color: white;
+    padding: 3px;
+    
+}
+
+.btn-reg{
+    background-color: rgb(40, 167, 69);
+    border-color: rgb(40, 167, 69);
+}

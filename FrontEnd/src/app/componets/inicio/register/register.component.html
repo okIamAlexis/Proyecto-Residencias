@@ -1,0 +1,173 @@
+<div class="container">
+    <div class="row" style="width: 100%;">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center" style="padding: 20px;">
+                <h3>Registrarse</h3>
+                <app-loading *ngIf="loading"></app-loading>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <form [formGroup]="registroEGR">
+                            <label for="tipousu" style="font-family: Nunito;">Tipo de Usuario</label>
+                            <div class="form-group" style="text-align: center;">
+                                <select class="form-group form-control" aria-label="Default select example" formControlName="tipousu" id="tipousu" style= "margin-bottom: 0;">
+                                    <option  selected>Tipo de Usuario</option>
+                                    <option value="Alumno">Alumno</option>
+                                    <option value="Maestro">Maestro</option>
+                                    <option value="Egresado">Egresado</option>
+                                    <option value="Empleador">Empleador</option>
+                                </select>
+
+                                <span class="text-danger ml-2" 
+                                *ngIf="registroEGR.get('tipousu').hasError('required') && registroEGR.get('tipousu').touched">
+                                El tipo Usuario <strong>es requerido</strong></span>
+                            </div>
+                    </form>
+                </div>
+
+                <!-- Egresado -->
+                                            
+                <form [formGroup]="registroEGR" (ngSubmit)="registrarEgresado()" style="padding-top: 10px;" *ngIf="registroEGR.value?.tipousu == 'Egresado'">
+
+                    <!-- Numero de Control -->
+                        
+                     <div class="form-group" style="text-align: start;" >
+                        <input type="text" class="form-control" placeholder="Numero de Control" formControlName="num_Control">
+                        <span class="text-danger ml-2"
+                        *ngIf="registroEGR.get('num_Control')?.hasError('required') && registroEGR.get('num_Control')?.touched">
+                            El Numero de Control es requerido
+                        </span>
+                        <span class="text-danger ml-2"
+                        *ngIf="registroEGR.get('num_Control')?.hasError('minlength') && registroEGR.get('num_Control')?.touched">
+                            El Numero de Control tiene minimo 9 caracteres
+                        </span>
+                        <span class="text-danger ml-2"
+                        *ngIf="registroEGR.get('num_Control')?.hasError('maxlength') && registroEGR.get('num_Control')?.touched">
+                            Maximo 9 caracteres
+                        </span>
+                    </div> 
+
+                       <!-- Repite Numero de control   -->
+                      <div class="form-group" style="text-align: start;" >
+                        <input type="text" class="form-control" placeholder="Repite Numero de control" formControlName="rep_num_Control">
+                        <span class="text-danger ml-2"
+                        *ngIf="registroEGR.hasError('notSame') && registroEGR.get('rep_num_Control').touched">
+                            Numero de Control distintos.
+                        </span>
+                    </div> 
+
+                    <!-- NOMBRE -->
+                     <div class="form-group" style="text-align: start;">
+                        <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre" >
+                        <span class="text-danger ml-2"
+                        *ngIf="registroEGR.get('nombre')?.hasError('required') && registroEGR.get('nombre')?.touched">
+                            El nombre es reuqerido.
+                        </span>
+                    </div> 
+
+                    <!-- Apellido Paterno -->
+                     <div class="form-group" style="text-align: start;">
+                        <input type="text" class="form-control" placeholder="Apellido Paterno" formControlName="a_paterno" >
+                        <span class="text-danger ml-2"
+                        *ngIf="registroEGR.get('a_paterno')?.hasError('required') && registroEGR.get('a_paterno')?.touched">
+                            Apellido Paterno requerido.
+                        </span>
+                    </div> 
+
+                    <!-- Apellido Materno -->
+                     <div class="form-group" style="text-align: start;">
+                        <input type="text" class="form-control" placeholder="Apellido Materno" formControlName="a_materno" >
+                        <span class="text-danger ml-2"
+                        *ngIf="registroEGR.get('a_materno')?.hasError('required') && registroEGR.get('a_materno')?.touched">
+                            Apellido Materno requerido.
+                        </span>
+                    </div> 
+
+                    <!-- Correo -->
+                     <div class="form-group" style="text-align: start;">
+                        <input type="text" class="form-control" placeholder="Correo" formControlName="correo" >
+                        <span class="text-danger ml-2"
+                        *ngIf="registroEGR.get('correo')?.hasError('required') && registroEGR.get('correo')?.touched">
+                            El correo es requerido.
+                        </span>
+                    </div> 
+                                            
+                    <div class="form-group" >
+                        <button class="btn btn-primary mr-2 btn-reg" type="submit">Registrarse</button>
+                        
+                    </div>
+                       
+                </form>
+
+                <!-- Empleador -->
+                <form [formGroup]="registroEMP" (ngSubmit)="registrarEmpleador()" style="padding-top: 10px;" *ngIf="registroEGR.value?.tipousu == 'Empleador'"> 
+
+                    <!-- RFC   -->
+                   <div class="form-group" style="text-align: start;" >
+                      <input type="text" class="form-control" placeholder="RFC" formControlName="rfc">
+                      <span class="text-danger ml-2"
+                      *ngIf="registroEMP.get('rfc')?.hasError('required') && registroEMP.get('rfc')?.touched">
+                          El RFC es requerido.
+                      </span>
+                  </div> 
+                  
+                    <!-- Repetir RFC   -->
+                   <div class="form-group" style="text-align: start;" >
+                      <input type="text" class="form-control" placeholder="Repetir RFC" formControlName="rep_rfc">
+                      <span class="text-danger ml-2"
+                      *ngIf="registroEMP.hasError('notSame') && registroEMP.get('rep_rfc').touched">
+                          RFC es distinto
+                      </span>
+                  </div>
+
+                  <div class="form-group" style="text-align: start;">
+                      <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre" >
+                      <span class="text-danger ml-2"
+                      *ngIf="registroEMP.get('nombre')?.hasError('required') && registroEMP.get('nombre')?.touched">
+                          El nombre es reuqerido.
+                      </span>
+                  </div> 
+
+                  <!-- Apellido Paterno -->
+                   <div class="form-group" style="text-align: start;">
+                      <input type="text" class="form-control" placeholder="Apellido Paterno" formControlName="a_paterno" >
+                      <span class="text-danger ml-2"
+                      *ngIf="registroEMP.get('a_paterno')?.hasError('required') && registroEMP.get('a_paterno')?.touched">
+                          Apellido Paterno requerido.
+                      </span>
+                  </div> 
+
+                  <!-- Apellido Materno -->
+                   <div class="form-group" style="text-align: start;">
+                      <input type="text" class="form-control" placeholder="Apellido Materno" formControlName="a_materno" >
+                      <span class="text-danger ml-2"
+                      *ngIf="registroEMP.get('a_materno')?.hasError('required') && registroEMP.get('a_materno')?.touched">
+                          Apellido Materno requerido.
+                      </span>
+                  </div> 
+
+                  <!-- Correo -->
+                   <div class="form-group" style="text-align: start;">
+                      <input type="text" class="form-control" placeholder="Correo" formControlName="correo" >
+                      <span class="text-danger ml-2"
+                      *ngIf="registroEMP.get('correo')?.hasError('required') && registroEMP.get('correo')?.touched">
+                          El correo es requerido.
+                      </span>
+                  </div> 
+
+                   <div class="form-group" >
+                      <button class="btn btn-primary mr-2 btn-reg" type="submit">Registrarse</button>
+                       
+                   </div>  
+
+                </form> 
+
+                <div class="form-group">
+                    <a style="color: #33b10a; cursor: pointer;" routerLink="/inicio/login">Volver</a>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+
